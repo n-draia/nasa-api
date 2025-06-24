@@ -1,0 +1,56 @@
+body {
+    background: #f8f9fa;
+}
+
+header {
+    background: #000 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+p, span, label, button {
+    font-family: 'Public Sans', sans-serif;
+}
+
+#images-section .card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+#images-section .card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+#images-section .card-img-top {
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+#images-section .card:hover .card-img-top {
+    transform: scale(1.08);
+}
+
+#images-section img {
+    object-fit: cover;
+    height: 220px;
+}
+
+footer {
+    background: #000 !important;
+}
+
+@media (max-width: 767px) {
+    #images-section img {
+        height: 160px;
+    }
+    header img {
+        height: 40px !important;
+    }
+    footer img {
+        height: 28px !important;
+    }
+}
