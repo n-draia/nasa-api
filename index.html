@@ -11,6 +11,24 @@
     <!-- Public Sans font for paragraphs -->
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+      // RTL auto-detection for translation tools
+      function setRTLIfNeeded() {
+        const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+        const html = document.documentElement;
+        // Check for Google Translate or browser translation
+        const lang = html.getAttribute('lang') || navigator.language || navigator.userLanguage || '';
+        if (rtlLangs.some(code => lang.startsWith(code))) {
+          html.setAttribute('dir', 'rtl');
+        } else {
+          html.setAttribute('dir', 'ltr');
+        }
+      }
+      document.addEventListener('DOMContentLoaded', setRTLIfNeeded);
+      // Also listen for Google Translate changes
+      const observer = new MutationObserver(setRTLIfNeeded);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    </script>
 </head>
 <body>
     <header class="black text-white py-3">
